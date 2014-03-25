@@ -1,0 +1,45 @@
+name: Sonos-Suit
+version: 1.0.0
+inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
+type: main
+platform: ubuntu@12.04
+description: Box for Wercker to build Sonos front-end components.
+packages:
+  - nodejs@0.10.26
+  - phantomjs@1.9.2
+  - sass@3.2.16
+keywords:
+  - nodejs
+  - ruby
+  - phantomjs
+  - sass
+script: |
+  sudo apt-get update
+
+  # node.js
+  export NODEVERSION=0.10.26
+  sudo apt-get install -y wget build-essential
+  cd $HOME
+  mkdir nodeinstall
+  cd nodeinstall
+  wget http://nodejs.org/dist/v$NODEVERSION/node-v$NODEVERSION.tar.gz
+  tar xzf node-v$NODEVERSION.tar.gz
+  cd node-v$NODEVERSION
+  ./configure
+  make
+  sudo make install > /dev/null
+  cd $HOME
+  rm -fr nodeinstall
+  node -v
+
+  # phantomjs
+  wget https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2
+  tar xfj phantomjs-1.9.2-linux-x86_64.tar.bz2
+  sudo cp phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/bin
+
+  # ruby dependecies
+  sudo gem install sass
+
+  # remove tmp folder
+  cd $HOME
+  sudo rm tmp -rf
