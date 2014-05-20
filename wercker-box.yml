@@ -8,11 +8,13 @@ packages:
   - nodejs@0.10.26
   - phantomjs@1.9.2
   - sass@3.2.16
+  - compass@0.12.2
 keywords:
   - nodejs
   - ruby
   - phantomjs
   - sass
+  - compass
 script: |
   sudo apt-get update
 
