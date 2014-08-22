@@ -5,16 +5,13 @@ type: main
 platform: ubuntu@12.04
 description: Box for Wercker to build Sonos front-end components.
 packages:
-  - nodejs@0.10.26
-  - phantomjs@1.9.2
+  - nodejs@0.10.43
   - sass@3.2.16
-  - compass@0.12.2
+  - phantomjs@1.9.7
 keywords:
   - nodejs
-  - ruby
   - phantomjs
   - sass
-  - compass
 script: |
   sudo apt-get update
 
@@ -35,15 +32,12 @@ script: |
   node -v
 
   # phantomjs
-  wget https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2
-  tar xfj phantomjs-1.9.2-linux-x86_64.tar.bz2
-  sudo cp phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/bin
-
-  # firefox
-  sudo apt-get install firefox
+  wget https://phantomjs.googlecode.com/files/phantomjs-1.9.7-linux-x86_64.tar.bz2
+  tar xfj phantomjs-1.9.7-linux-x86_64.tar.bz2
+  sudo cp phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin
 
   # ruby dependecies
-  sudo gem install sass
+  sudo gem install sass -v 3.2.16
 
   # remove tmp folder
   cd $HOME
