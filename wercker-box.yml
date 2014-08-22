@@ -1,5 +1,5 @@
 name: Sonos-Suit
-version: 1.0.3
+version: 1.0.4
 inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
 type: main
 platform: ubuntu@12.04
@@ -32,7 +32,7 @@ script: |
   node -v
 
   # phantomjs
-  wget https://phantomjs.googlecode.com/files/phantomjs-1.9.7-linux-x86_64.tar.bz2
+  wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
   tar xfj phantomjs-1.9.7-linux-x86_64.tar.bz2
   sudo cp phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin
 
