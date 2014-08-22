@@ -16,7 +16,7 @@ script: |
   sudo apt-get update
 
   # node.js
-  export NODEVERSION=0.10.26
+  export NODEVERSION=0.10.31
   sudo apt-get install -y wget build-essential
   cd $HOME
   mkdir nodeinstall
