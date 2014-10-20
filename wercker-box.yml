@@ -37,7 +37,7 @@ script: |
   sudo cp phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin
 
   # ruby dependecies
-  sudo gem install sass -v 3.2.16
+  sudo gem install sass -v 3.3.14
 
   # remove tmp folder
   cd $HOME
