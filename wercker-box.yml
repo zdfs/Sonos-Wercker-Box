@@ -1,12 +1,12 @@
 name: Sonos-Suit
-version: 1.0.6
+version: 1.0.7
 inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
 type: main
 platform: ubuntu@12.04
 description: Box for Wercker to build Sonos front-end components.
 packages:
   - nodejs@0.10.31
-  - sass@3.2.16
+  - sass@3.3.14
   - phantomjs@1.9.7
 keywords:
   - nodejs
@@ -38,6 +38,7 @@ script: |
 
   # ruby dependecies
   sudo gem install sass -v 3.3.14
+  sudo gem install slack-notifier
 
   # remove tmp folder
   cd $HOME
