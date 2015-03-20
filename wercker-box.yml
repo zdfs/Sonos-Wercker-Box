@@ -1,5 +1,5 @@
 name: Sonos-Suit
-version: 1.0.10
+version: 1.0.11
 inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
 type: main
 platform: ubuntu@12.04
@@ -16,8 +16,8 @@ script: |
   sudo apt-get update
 
   # Install Chrome
-  curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-  echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google.list
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
   apt-get update
   apt-get install -y google-chrome-stable
 
