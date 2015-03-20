@@ -5,7 +5,7 @@ type: main
 platform: ubuntu@12.04
 description: Box for Wercker to build Sonos front-end components.
 packages:
-  - nodejs@0.10.31
+  - nodejs@0.12.0
   - sass@3.3.14
   - phantomjs@1.9.7
 keywords:
@@ -16,11 +16,13 @@ script: |
   sudo apt-get update
 
   # Install Chrome
-  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  curl -sL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+  echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google.list
+  apt-get update
+  apt-get install -y google-chrome-stable
 
   # node.js
-  export NODEVERSION=0.10.31
+  export NODEVERSION=0.12.0
   sudo apt-get install -y wget build-essential
   cd $HOME
   mkdir nodeinstall
