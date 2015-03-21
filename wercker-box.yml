@@ -1,5 +1,5 @@
 name: Sonos-Suit
-version: 1.0.12
+version: 1.0.13
 inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
 type: main
 platform: ubuntu@12.04
@@ -13,8 +13,6 @@ keywords:
   - phantomjs
   - sass
 script: |
-  sudo apt-get update
-
   # Install Chrome
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
