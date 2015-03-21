@@ -1,5 +1,5 @@
 name: Sonos-Suit
-version: 1.0.13
+version: 1.0.9
 inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
 type: main
 platform: ubuntu@12.04
@@ -17,7 +17,7 @@ script: |
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
   sudo apt-get update
-  apt-get install -y google-chrome-stable
+  sudo apt-get install -y google-chrome-stable
 
   # node.js
   export NODEVERSION=0.12.0
