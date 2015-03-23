@@ -1,5 +1,5 @@
 name: Sonos-Suit
-version: 1.0.9
+version: 1.0.10
 inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
 type: main
 platform: ubuntu@12.04
@@ -34,6 +34,9 @@ script: |
   cd $HOME
   rm -fr nodeinstall
   node -v
+
+  # Install Selenium Standalone npm
+  sudo npm install selenium-standalone@latest -g
 
   # phantomjs
   wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
