@@ -1,8 +1,8 @@
 name: Sonos-Suit
 version: 1.0.12
-inherits: wercker/ubuntu12.04-ruby2.0.0@1.0.0
+inherits: tvaughan/ubuntu14.04@1.0.2
 type: main
-platform: ubuntu@12.04
+platform: ubuntu@14.04
 description: Box for Wercker to build Sonos front-end components.
 packages:
   - nodejs@4.2.3
@@ -13,6 +13,12 @@ keywords:
   - phantomjs
   - sass
 script: |
+  sudo apt-get -y install software-properties-common python-software-properties
+  sudo apt-get update
+  sudo apt-add-repository -y ppa:brightbox/ruby-ng
+  sudo apt-get update
+  sudo apt-get install -y ruby2.2.3
+
   # Install Chrome
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
