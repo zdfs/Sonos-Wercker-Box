@@ -13,7 +13,7 @@ keywords:
   - phantomjs
   - sass
 script: |
-  sudo apt-get -y install software-properties-common python-software-properties
+  sudo apt-get -y install software-properties-common
   sudo apt-get update
   sudo apt-add-repository -y ppa:brightbox/ruby-ng
   sudo apt-get update
