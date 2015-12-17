@@ -1,6 +1,6 @@
 name: Sonos-Suit
 version: 1.0.12
-box: wercker/ubuntu12.04-ruby2.0.0@1.0.0
+inherits: wercker/ubuntu12.04-ruby2.0.0@1.0.0
 type: main
 platform: ubuntu@12.04
 description: Box for Wercker to build Sonos front-end components.
