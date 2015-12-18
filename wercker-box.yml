@@ -1,5 +1,5 @@
 name: Sonos-Suit
-version: 1.0.13
+version: 1.0.14
 inherits: tvaughan/ubuntu14.04@1.0.2
 type: main
 platform: ubuntu@14.04
@@ -18,7 +18,7 @@ script: |
   sudo apt-add-repository -y ppa:brightbox/ruby-ng
   sudo apt-get update
   sudo apt-get install -y ruby2.2
-  sudo apt-get install wget xvfb
+  sudo apt-get install wget xvfb default-jre default-jdk
   sudo apt-get update
 
   # Install Chrome
